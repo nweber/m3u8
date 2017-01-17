@@ -18,6 +18,8 @@ except ImportError:
     from urllib.request import urlopen as url_opener
     urlopen = url_opener
 
+import requests
+
 
 from m3u8.model import M3U8, Playlist, IFramePlaylist, Media, Segment
 from m3u8.parser import parse, is_url, ParseError
@@ -49,17 +51,10 @@ def load(uri, timeout=None):
 
 
 def _load_from_uri(uri, timeout=None):
-    resource = urlopen(uri, timeout=timeout)
-    base_uri = _parsed_url(_url_for(uri))
-    if PYTHON_MAJOR_VERSION < (3,):
-        content = _read_python2x(resource)
-    else:
-        content = _read_python3x(resource)
+    resource = requests.get(uri)
+    base_uri = _parsed_url(resource.url)
+    content = resource.text
     return M3U8(content, base_uri=base_uri)
-
-
-def _url_for(uri):
-    return urlopen(uri).geturl()
 
 
 def _parsed_url(url):
@@ -67,14 +62,6 @@ def _parsed_url(url):
     prefix = parsed_url.scheme + '://' + parsed_url.netloc
     base_path = posixpath.normpath(parsed_url.path + '/..')
     return url_parser.urljoin(prefix, base_path)
-
-
-def _read_python2x(resource):
-    return resource.read().strip()
-
-
-def _read_python3x(resource):
-    return resource.read().decode(resource.headers.get_content_charset(failobj="utf-8"))
 
 
 def _load_from_file(uri):
