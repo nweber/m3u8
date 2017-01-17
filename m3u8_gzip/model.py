@@ -496,9 +496,9 @@ class Playlist(BasePathMixin):
         if self.stream_info.program_id:
             stream_inf.append('PROGRAM-ID=%d' % self.stream_info.program_id)
         if self.stream_info.bandwidth:
-            stream_inf.append('BANDWIDTH=%d' % self.stream_info.bandwidth)
+            stream_inf.append('BANDWIDTH=%s' % self.stream_info.bandwidth)
         if self.stream_info.average_bandwidth:
-            stream_inf.append('AVERAGE-BANDWIDTH=%d' %
+            stream_inf.append('AVERAGE-BANDWIDTH=%s' %
                               self.stream_info.average_bandwidth)
         if self.stream_info.resolution:
             res = str(self.stream_info.resolution[
@@ -558,7 +558,7 @@ class IFramePlaylist(BasePathMixin):
             iframe_stream_inf.append('PROGRAM-ID=%d' %
                                      self.iframe_stream_info.program_id)
         if self.iframe_stream_info.bandwidth:
-            iframe_stream_inf.append('BANDWIDTH=%d' %
+            iframe_stream_inf.append('BANDWIDTH=%s' %
                                      self.iframe_stream_info.bandwidth)
         if self.iframe_stream_info.resolution:
             res = (str(self.iframe_stream_info.resolution[0]) + 'x' +
