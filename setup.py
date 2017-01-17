@@ -12,14 +12,14 @@ setup(
     name='m3u8',
     author='Globo.com',
     author_email='videos3@corp.globo.com',
-    version='0.3.0b',
+    version='0.3.1',
     license='MIT',
     zip_safe=False,
     include_package_data=True,
     install_requires=install_reqs,
     packages=['m3u8'],
     url='https://github.com/nweber/m3u8',
-    download_url = 'https://github.com/nweber/m3u8/tarball/0.3.0b',
+    download_url = 'https://github.com/nweber/m3u8/tarball/0.3.1',
     description='Python m3u8 parser',
     long_description=long_description
     )
