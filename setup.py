@@ -17,7 +17,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=install_reqs,
-    packages=['m3u8'],
+    packages=['m3u8-gzip'],
     url='https://github.com/nweber/m3u8',
     download_url = 'https://github.com/nweber/m3u8/tarball/0.3.1',
     description='Python m3u8 parser',
