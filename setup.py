@@ -12,14 +12,14 @@ setup(
     name='m3u8_gzip',
     author='Globo.com',
     author_email='videos3@corp.globo.com',
-    version='0.3.1',
+    version='0.4.0',
     license='MIT',
     zip_safe=False,
     include_package_data=True,
     install_requires=install_reqs,
     packages=['m3u8_gzip'],
     url='https://github.com/nweber/m3u8_gzip',
-    download_url = 'https://github.com/nweber/m3u8_gzip/tarball/0.3.1',
+    download_url = 'https://github.com/nweber/m3u8_gzip/tarball/0.4.0',
     description='Python m3u8 parser',
     long_description=long_description
     )
