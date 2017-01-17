@@ -9,7 +9,7 @@ if exists('README.rst'):
 install_reqs = [req for req in open(abspath(join(dirname(__file__), 'requirements.txt')))]
 
 setup(
-    name='m3u8',
+    name='m3u8-gzip',
     author='Globo.com',
     author_email='videos3@corp.globo.com',
     version='0.3.1',
