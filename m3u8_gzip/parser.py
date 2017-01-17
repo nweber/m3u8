@@ -7,7 +7,7 @@ import iso8601
 import datetime
 import itertools
 import re
-from m3u8 import protocol
+from m3u8_gzip import protocol
 
 '''
 http://tools.ietf.org/html/draft-pantos-http-live-streaming-08#section-3.2
@@ -304,7 +304,7 @@ def _parse_cueout_start(line, state, prevline):
     if _cueout_state:
         state['current_cue_out_scte35'] = _cueout_state[0]
         state['current_cue_out_duration'] = _cueout_state[1]
-    
+
 def string_to_lines(string):
     return string.strip().replace('\r\n', '\n').split('\n')
 
